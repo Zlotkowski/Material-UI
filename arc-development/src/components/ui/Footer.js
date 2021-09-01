@@ -89,8 +89,7 @@ function Footer(props) {
                                 setNumTab(1);
                                 setSelectedIndex(2)
                             }}
-                                  className={classes.link}>Mobile App
-                                Development</Grid>
+                                  className={classes.link}>iOS/Android App Development</Grid>
                         </Grid>
                         <Grid container direction="column" spacing={2}>
                             <Grid item component={Link} to="/websites" onClick={() => {

@@ -71,7 +71,10 @@ const useStyles = makeStyles(theme => ({
         borderRadius: "50px",
         marginLeft: "50px",
         marginRight: "25px",
-        height: "45px"
+        height: "45px",
+        "&:hover": {
+            backgroundColor: theme.palette.secondary.light
+        }
     },
     menu: {
         backgroundColor: theme.palette.common.blue,
@@ -151,7 +154,7 @@ function Header(props) {
     const menuOptions = [
         {name: "Services", link: "/services", activeIndex: 1, selectedIndex: 0},
         {name: "Custom Software Development", link: "/customsoftware", activeIndex: 1, selectedIndex: 1},
-        {name: "Mobile App Development", link: "/mobileapps", activeIndex: 1, selectedIndex: 2},
+        {name: "iOS/Android App Development", link: "/mobileapps", activeIndex: 1, selectedIndex: 2},
         {name: "Website Development", link: "/websites", activeIndex: 1, selectedIndex: 3}
     ];
 
@@ -181,12 +184,15 @@ function Header(props) {
                         }
                     }
                     break;
+                case '/estimate':
+                    props.setNumTab(5);
+                    break;
                 default:
                     break;
             }
         })
 
-    }, [numTab, menuOptions, selectedIndex, routes, props]);
+    }, [numTab, menuOptions, selectedIndex, routes, props, setNumTab, setSelectedIndex]);
 
     const tabs = (
         <React.Fragment>
@@ -198,7 +204,8 @@ function Header(props) {
                          aria-owns={route.ariaOwns} aria-haspopup={route.ariaPopup} onMouseOver={route.mouseOver}/>
                 ))}
             </Tabs>
-            <Button variant="contained" color="secondary" className={classes.button} component={Link} to="/estimate">Free
+            <Button variant="contained" color="secondary" className={classes.button} component={Link}
+                    onClick={() => props.setNumTab(5)} to="/estimate">Free
                 Estimate</Button>
             <Menu id="simple-menu"
                   classes={{paper: classes.menu}}

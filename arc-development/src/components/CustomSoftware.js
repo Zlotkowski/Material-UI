@@ -52,7 +52,6 @@ export default function CustomSoftware(props) {
 
     const documentsOptions = {
         loop: true,
-        autoplay: false,
         animationData: documentsAnimation,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice"
@@ -61,7 +60,6 @@ export default function CustomSoftware(props) {
 
     const scaleOptions = {
         loop: true,
-        autoplay: false,
         animationData: scaleAnimation,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice"
@@ -70,7 +68,6 @@ export default function CustomSoftware(props) {
 
     const automationOptions = {
         loop: true,
-        autoplay: false,
         animationData: automationAnimation,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice"
@@ -79,7 +76,6 @@ export default function CustomSoftware(props) {
 
     const uxOptions = {
         loop: true,
-        autoplay: false,
         animationData: uxAnimation,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice"
@@ -88,7 +84,7 @@ export default function CustomSoftware(props) {
 
     return (
         <Grid container direction="column">
-            <Grid item container direction="row" justify={matchesMD ? "center" : undefined}
+            <Grid item container direction="row" justifyContent={matchesMD ? "center" : undefined}
                   className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}>
                 <Hidden mdDown>
                     <Grid item className={classes.arrowContainer} style={{marginRight: "1em", marginLeft: "-3.5em"}}>
@@ -132,7 +128,8 @@ export default function CustomSoftware(props) {
                     </Grid>
                 </Hidden>
             </Grid>
-            <Grid item container direction="row" justify="center" style={{marginTop: "15em", marginBottom: "20em"}}
+            <Grid item container direction="row" justifyContent="center"
+                  style={{marginTop: "15em", marginBottom: "20em"}}
                   className={classes.rowContainer}>
                 <Grid item container direction="column" md alignItems="center" style={{maxWidth: "40em"}}>
                     <Grid item>
@@ -164,7 +161,7 @@ export default function CustomSoftware(props) {
                 </Grid>
             </Grid>
             <Grid item container alignItems={matchesMD ? "center" : undefined} direction={matchesMD ? "column" : "row"}
-                  justify="space-between" className={classes.rowContainer}>
+                  justifyContent="space-between" className={classes.rowContainer}>
                 <Grid item container className={classes.itemContainer} direction={matchesSM ? "column" : "row"}
                       style={{marginBottom: matchesMD ? "15em" : 0}} md>
                     <Grid item container direction="column" md>
@@ -188,13 +185,13 @@ export default function CustomSoftware(props) {
                         </Grid>
                     </Grid>
                     <Grid item md>
-                        <Lottie options={documentsOptions} isStopped={true}
+                        <Lottie options={documentsOptions}
                                 style={{maxHeight: 275, maxWidth: 275, minHeight: 250}}/>
                     </Grid>
                 </Grid>
                 <Grid item container className={classes.itemContainer} direction={matchesSM ? "column" : "row"} md>
                     <Grid item md>
-                        <Lottie options={scaleOptions} isStopped={true} style={{maxHeight: 260, maxWidth: 280}}/>
+                        <Lottie options={scaleOptions} style={{maxHeight: 260, maxWidth: 280}}/>
                     </Grid>
                     <Grid item container direction="column" md>
                         <Grid item>
@@ -233,7 +230,7 @@ export default function CustomSoftware(props) {
                 </Grid>
             </Grid>
             <Grid item container alignItems={matchesMD ? "center" : undefined} direction={matchesMD ? "column" : "row"}
-                  justify="space-between" style={{marginBottom: "20em"}} className={classes.rowContainer}
+                  justifyContent="space-between" style={{marginBottom: "20em"}} className={classes.rowContainer}
             >
                 <Grid item container className={classes.itemContainer} direction={matchesSM ? "column" : "row"}
                       style={{marginBottom: matchesMD ? "15em" : 0}} md>
@@ -258,12 +255,12 @@ export default function CustomSoftware(props) {
                         </Grid>
                     </Grid>
                     <Grid item md>
-                        <Lottie options={automationOptions} isStopped={true} style={{maxHeight: 290, maxWidth: 280}}/>
+                        <Lottie options={automationOptions} style={{maxHeight: 290, maxWidth: 280}}/>
                     </Grid>
                 </Grid>
                 <Grid item container className={classes.itemContainer} direction={matchesSM ? "column" : "row"} md>
                     <Grid item md>
-                        <Lottie options={uxOptions} isStopped={true} style={{maxHeight: 310, maxWidth: 155}}/>
+                        <Lottie options={uxOptions} style={{maxHeight: 310, maxWidth: 155}}/>
                     </Grid>
                     <Grid item container direction="column" md>
                         <Grid item>
